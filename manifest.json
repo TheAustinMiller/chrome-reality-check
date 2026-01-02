@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Time-On-Page Reality Check",
+  "version": "1.0",
+  "description": "Gently reminds you how long you've been on a page.",
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Time-On-Page Reality Check"
+  }
+}
